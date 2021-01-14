@@ -4,7 +4,9 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Development server
 
-Run `ng serve` for a Angular Application . Go to `http://localhost:4302/`. The app will automatically reload if you change any of the source files.
+Run `npm i` for node_modules installations for current Project
+
+Run `ng serve` for a Angular Application . Go to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 Run `npm start` for a node server. Go to `http://localhost:3000/admin` for Nodejs Application.
 
