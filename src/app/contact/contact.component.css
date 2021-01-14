@@ -1,0 +1,62 @@
+h1{
+    font-size: 1.5em;
+	margin: 1.5rem;
+}
+.home{
+    text-align: center;
+} 
+
+form {
+	margin: auto;
+	padding:30px;
+	width: 400px;
+	height:auto;
+	overflow:hidden;
+	background:#17a2b8;
+	border-radius:10px;
+    color: white;
+}
+
+form label {
+	font-size:14px;
+	cursor:pointer;
+}
+
+form label,
+form input {
+	float:left;
+	clear:both;
+}
+
+form input {
+	margin:15px 0;
+	padding:15px 10px;
+	width:100%;
+	outline:none;
+	border:1px solid #bbb;
+	border-radius:20px;
+	display:inline-block;
+}
+
+form textarea{
+	clear:both;
+   width:100%;
+   outline:none;
+	border:1px solid #bbb;
+	border-radius:20px;
+	display:inline-block;
+}
+
+.mat-flat-button {
+	margin: 15px;
+	padding: 0px;
+	width:auto;
+	border:none;
+	background-color: white;
+	cursor:pointer;
+	display:inline-block;
+	clear:right;
+
+}
+
+

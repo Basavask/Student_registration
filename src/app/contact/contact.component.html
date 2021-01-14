@@ -1,0 +1,17 @@
+<div class="home">
+  <h1>Any Queries Please Reach out to us</h1>
+  <form [formGroup]="contactForm" novalidate (ngSubmit)="onSubmit()">
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name" formControlName="name" class="form-control" class="full-width" /><br />
+    <label for="email">Email Address</label>
+    <input type="email" id="email" name="_replyto" formControlName="email" class="form-control"
+      class="full-width" /><br />
+    <label for="message">Message</label>
+    <textarea name="message" id="message" cols="30" rows="10" class="full-width" ngModel></textarea><br />
+    <div style="display: flex;justify-content: center;align-items: center;">
+      <button mat-flat-button (click)="onSubmit()">Send</button>
+      <button mat-flat-button (click)="goBack()">Back</button>
+    </div>
+
+  </form>
+</div>

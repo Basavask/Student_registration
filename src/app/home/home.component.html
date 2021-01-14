@@ -1,0 +1,62 @@
+<mat-sidenav-container>
+  <mat-sidenav #sidenav role="navigation">
+    <mat-nav-list>
+      <a mat-list-item routerLink="/register">Student_Register</a>
+      <a mat-list-item routerLink="/about">About_Us</a>
+      <a mat-list-item routerLink="/contact">Contact_Us</a>
+      <a mat-list-item routerLink="/">Logout</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <div fxHide.gt-xs>
+        <button mat-icon-button (click)="sidenav.toggle()">
+          <mat-icon>menu</mat-icon>
+        </button>
+      </div>
+      <div><a routerLink="/"> <img class="logo_img" src="https://img.icons8.com/bubbles/2x/user-male.png"
+            alt="user_img" /></a></div>
+      <div fxFlex fxLayout fxLayoutAlign="flex-end" fxHide.xs>
+        <ul fxLayout fxLayoutGap="10px" class="navigation-items">
+          <li><a routerLink="/register">Student_Register</a></li>
+          <li><a routerLink="/about">About_Us</a></li>
+          <li><a routerLink="/contact">Contact_Us</a></li>
+          <li><a routerLink="/">Logout</a></li>
+        </ul>
+      </div>
+    </mat-toolbar>
+    <main>
+      <div>
+        <div class="row reportees">
+          Registered-Students-list
+        </div>
+        <div class="padding-l-20">
+          <table class="t-border" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover">
+            <thead>
+              <tr class="text-center tr-border">
+                <th class="td-border">User Name</th>
+                <th class="td-border">Email</th>
+                <th class="td-border">Nationality</th>
+                <th class="td-border">Gender</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let info of tabledata" class="text-center">
+                <td class="td-border">{{ info?.username }}</td>
+                <td class="td-border">{{ info?.email }}</td>
+                <td class="td-border">{{ info?.nationality }}</td>
+                <td class="td-border">{{ info?.gender }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+      <div *ngIf="isNoData">
+        <h2>No Data Found</h2>
+      </div>
+      <router-outlet></router-outlet>
+    </main>
+  </mat-sidenav-content>
+
+</mat-sidenav-container>

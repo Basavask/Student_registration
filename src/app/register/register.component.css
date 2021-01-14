@@ -1,0 +1,128 @@
+body{
+    background: linear-gradient(120deg, #b86983);
+   background-size: cover;
+}
+
+*[role="form"] {
+   max-width: 530px;
+   padding: 40px;
+   margin: 20 auto;
+   border-radius: 0.3em;
+    background-color:#b86983;
+}
+
+*[role="form"] h2 { 
+   font-family: 'helvetica', 'sans-serif','helvetica';
+   font-size: 40px;
+   font-weight: 600;
+   color: #000000;
+   margin-top: 8%;
+   text-align: center;
+   text-transform: uppercase;
+   letter-spacing: 4px;
+}
+.panel-footer row {
+margin: 10px;
+margin-right: 10px;
+padding: 5 10;
+
+}
+.mat-flat-button{
+    margin: 20px;
+    padding: 0px 16px;
+}
+input{
+    margin: auto;
+    
+}
+select{
+    font-size: 1rem;
+}
+.col-sm-5 {
+    font-size: 0.9em;
+    
+}
+label{
+    font-weight: bold;
+    font-size: 20em;
+}
+.col-sm-3{
+    font-size: 1rem;
+}
+.Loader{
+    text-align: center;
+    position: relative;
+top: 50%;
+margin:auto auto auto;
+
+}
+.email{
+    justify-content: center;
+}
+#pos{
+    position: relative;
+}
+mat-radio-button ~ .mat-radio-button {
+    margin-left: 20px;
+    
+  }
+  .radio{
+      display: inline-block;
+  }
+  .text-danger{
+      margin: 20px;
+      padding: 10px;
+      font-size: 1em;
+  }
+  .mat-form-field{
+      width: inherit;
+      height: auto;
+      font-size: 1em;
+      line-height: 1em;
+  }
+  /* .col-sm-3 {
+font-size: 0.85em;
+  } */
+  .mat-checkbox-layout  {
+      line-height: inherit;
+  }
+  .mat-checkbox{
+      font-family: inherit;
+      
+  }
+  .mat-radio-button{
+      font-family: inherit;
+      font-size: 0.9rem;
+  }
+  example-margin{
+      width: 10px;
+      height: 10px;
+  }
+  .mat-radio-outer-circle{
+      width: 10px;
+      height: 10px;
+  }
+  .mat-form-field{
+      
+      font-size: 0.75em;
+  }
+.dob{
+    border: inherit;
+}
+
+.form-control{
+    height: inherit;
+}
+.dob .mat-form-field-wrapper{
+    padding-bottom: 1em !important;
+}
+span{
+    margin: auto;
+}
+.container{
+    border-radius: solid 5px black;
+}
+#name{
+    padding-top: 20px ;
+}
+

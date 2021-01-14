@@ -1,0 +1,41 @@
+<h2></h2>
+<div class="login-container">
+  <div class="login-content">
+    <mat-toolbar class="login-toolbar" color="primary">Sign up</mat-toolbar>
+    <mat-card>
+      <form [formGroup]="signupForm" novalidate (ngSubmit)="onSubmit()">
+        <mat-form-field>
+          <mat-icon matPrefix>account_circle</mat-icon>
+          <input autofocus type="text" matInput placeholder="firstName" formControlName="firstName">
+        </mat-form-field>
+        <mat-form-field>
+          <mat-icon matPrefix>account_circle</mat-icon>
+          <input autofocus type="text" matInput placeholder="lastName" formControlName="lastName">
+        </mat-form-field>
+        <!-- <mat-form-field>
+          <mat-icon matPrefix>account_circle</mat-icon>
+          <input autofocus type="text" matInput placeholder="emailId" formControlName="emailId">
+        </mat-form-field> -->
+        <mat-form-field>
+          <mat-icon matPrefix>person_outline</mat-icon>
+          <input autofocus type="text" matInput placeholder="userName" formControlName="userName">
+        </mat-form-field>
+        <mat-form-field>
+          <mat-icon matPrefix>lock_outline</mat-icon>
+          <input type="password" autocomplete="false" matInput placeholder="Password" formControlName="password">
+        </mat-form-field>
+
+        <button type="submit" mat-raised-button color="primary" [disabled]="!signupForm.valid">Register</button>
+        <button mat-raised-button color="primary" (click)="reset()">Cancel</button>
+      </form>
+    </mat-card>
+    <ngx-spinner bdColor="rgba(0, 0, 0, 0.8)" size="medium" color="#fff" type="ball-spin-fade" [fullScreen]="true">
+			<p style="color: white"> Loading.. </p>
+		</ngx-spinner>
+  </div>
+</div>
+
+<div class="back-div">
+  <a class="back-text" (click)="goBack()">
+    << Home</a>
+</div>

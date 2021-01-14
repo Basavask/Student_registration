@@ -1,0 +1,95 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+        <span class="span">Student Registration Page</span>
+    </mat-toolbar-row>
+</mat-toolbar>
+
+<div class="container">
+    <form [formGroup]="regForm" novalidate (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="Username" #label class="col-sm-3 control-label" id="name">Username*</label>
+            <div class="col-sm-5">
+                <input type="text" id="username" formControlName="username" placeholder="Enter Name"
+                    class="form-control" autofocus [(ngModel)]="name">
+                <p>Value: {{ name }} </p>
+            </div>
+        </div>
+        <div class="dob">
+            <div class="form-group">
+                <label for="birthDate" #dob class="col-sm-3 control-label">Date of Birth*</label>
+                <div class="col-sm-5">
+
+                    <mat-form-field class="dob" appearance="outline">
+                        <input matInput [matDatepicker]="picker3" formControlName="dob" id="birthDate"
+                            class="form-control" autocomplete="off">
+                        <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>
+                        <mat-datepicker #picker3></mat-datepicker>
+                    </mat-form-field>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="email" class="col-sm-3 control-label">Email* </label>
+            <div class="col-sm-5">
+                <input type="email" formControlName="email" id="email" placeholder="Email" class="form-control"
+                    name="email" (click)="openDialog()">
+            </div>
+
+            <div class="email" *ngIf="(email.invalid && email.touched) || email.dirty">
+                <small *ngIf="email.errors?.pattern" class="text-danger">Please provide a valid email address</small>
+            </div>
+
+        </div>
+        <div class="form-group">
+            <label for="nationality" class="col-sm-3 control-label">Nationality </label>
+            <div class="col-sm-5">
+                <select id="country" class="form-control" name="Nationality" formControlName="nationality"
+                    placeholder="Select" required>
+                    <option *ngFor="let country of countryList;">
+                        {{country.name}}
+                    </option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="gender" class="col-sm-3 control-label">Gender</label>
+            <mat-radio-group formControlName="gender" aria-label="Select an option">
+                <div class="col-sm-5">
+                    <mat-radio-button color="primary" name="gender" value="Male">Male</mat-radio-button>
+                    <mat-radio-button color="primary" name="gender" value="Female">Female</mat-radio-button>
+                </div>
+            </mat-radio-group>
+        </div>
+
+        <div class="form-group">
+            <label for="hobbies" class="col-sm-3 control-label">Hobbies </label>
+            <div class="col-sm-5">
+                <mat-checkbox color="primary" class="example-margin">Reading Books</mat-checkbox><br>
+                <mat-checkbox color="primary" class="example-margin">Dance</mat-checkbox><br>
+                <mat-checkbox color="primary" class="example-margin">Music</mat-checkbox><br>
+                <mat-checkbox color="primary" class="example-margin">Cooking</mat-checkbox><br>
+            </div>
+        </div>
+        <div class="panel-footer row">
+            <!-- panel-footer -->
+
+            <div class="col-xs-6 text-left">
+                <div class="previous">
+                    <button mat-flat-button color="primary" placement="right" [disabled]="!regForm.valid">Submit
+                    </button>
+                </div>
+            </div>
+            <div class="col-xs-6 text-right">
+                <div class="next">
+                    <button mat-flat-button color="primary" (click)="reset()"
+                        ngbTooltip="Button that is used to reset the form " placement="right">Reset
+                    </button>
+                </div>
+            </div>
+
+        </div>
+        <ngx-spinner bdColor="rgba(0, 0, 0, 0.8)" size="medium" color="#fff" type="ball-spin-fade" [fullScreen]="true">
+            <p style="color: white"> Loading.. </p>
+        </ngx-spinner>
+    </form> <!-- /form -->
+</div> <!-- ./container -->

@@ -1,0 +1,34 @@
+<h2></h2>
+<div class="login-container">
+  <div class="login-content">
+    <mat-toolbar class="login-toolbar" color="primary">Login</mat-toolbar>
+    <mat-card>
+      <form [formGroup]="loginForm" novalidate (ngSubmit)="onSubmit(loginForm)">
+        <mat-form-field>
+          <mat-icon matPrefix>person_outline</mat-icon>
+          <input type="text" matInput placeholder="Username" ngModel formControlName="userName">
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-icon matPrefix>lock_outline</mat-icon>
+          <input type="password" autocomplete="false" matInput placeholder="Password" ngModel
+            formControlName="password">
+        </mat-form-field>
+
+        <button type="submit" mat-raised-button color="primary" [disabled]="!loginForm.valid">Login</button>
+      </form>
+      <div class="err-div" *ngIf="isErrorOccured">
+        <p class="err-msg">{{errMsg}}</p>
+      </div>
+    </mat-card>
+    <ngx-spinner bdColor="rgba(0, 0, 0, 0.8)" size="medium" color="#fff" type="ball-spin-fade" [fullScreen]="true">
+			<p style="color: white"> Loading.. </p>
+		</ngx-spinner>
+  </div>
+
+</div>
+
+<div class="back-div">
+  <a class="back-text" (click)="goBack()">
+    << Home</a>
+</div>
